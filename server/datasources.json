@@ -1,0 +1,31 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "readtopia-test": {
+    "url": "${MONGO_URL}",
+    "database": "readtopia-test",
+    "name": "readtopia-test",
+    "connector": "loopback-connector-mongodb"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "email@address.com",
+          "pass": "password"
+        }
+      }
+    ]
+  }
+}

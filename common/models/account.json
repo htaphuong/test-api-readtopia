@@ -1,0 +1,77 @@
+{
+  "name": "Account",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "accountToken": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "userInfo": {
+      "type": "hasOne",
+      "model": "userInfo",
+      "foreignKey": "accountId"
+    }
+  },
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": false,
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "addNew"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "accessType": "READ",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "addNew": {
+      "accepts": [
+        {
+          "arg": "account",
+          "type": "object",
+          "required": true,
+          "description": "Account object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "account",
+          "type": "object",
+          "root": true,
+          "description": "Account's data with generated id"
+        }
+      ],
+      "description": "Add new account",
+      "http": [
+        {
+          "path": "/addNew",
+          "verb": "post"
+        }
+      ]
+    }    
+  }
+}

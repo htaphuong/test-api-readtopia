@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "readtopia-test",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "readtopia-test",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "readtopia-test",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "readtopia-test",
+    "public": false
+  },
+  "test": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "Account": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "userInfo": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "readtopia-test",
+    "public": false
+  },
+  "user" : {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "userCredential": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
+  "userIdentity": {
+    "dataSource": "readtopia-test",
+    "public": true
+  }
+}
