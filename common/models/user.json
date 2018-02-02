@@ -26,6 +26,11 @@
       "type": "hasMany",
       "model": "userInfo",
       "foreignKey": "userId"
+    },
+    "transactions": {
+      "type": "hasMany",
+      "model": "transaction",
+      "foreignKey": "userId"
     }
   },
   "validations": [],

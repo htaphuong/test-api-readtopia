@@ -1,0 +1,53 @@
+{
+  "name": "book",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "bookId": {
+      "type": "string",
+      "required": true
+    },
+    "point": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "modified_at": {
+      "type": "date",
+      "required": false,
+      "default": "$now"
+    }
+  },
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    },
+    "book": {
+      "type": "belongsTo",
+      "model": "book",
+      "foreignKey": "bookId"
+    }
+  },
+  "validations": [],
+  "acls": [    
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

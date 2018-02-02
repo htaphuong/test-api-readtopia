@@ -1,0 +1,51 @@
+{
+  "name": "book",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "resource": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "type": "string",
+      "required": false
+    },
+    "tags": {
+      "type": "string",
+      "required": false
+    },
+    "point": {
+      "type": "number",
+      "default": 0,
+      "required": false
+    }
+  },
+  "relations": {
+    "transactions": {
+      "type": "hasMany",
+      "model": "transaction",
+      "foreignKey": "bookId"
+    }
+  },
+  "validations": [],
+  "acls": [    
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

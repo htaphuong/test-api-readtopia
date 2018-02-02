@@ -44,6 +44,10 @@
     "dataSource": "readtopia-test",
     "public": true
   },
+  "book": {
+    "dataSource": "readtopia-test",
+    "public": true
+  },
   "userInfo": {
     "dataSource": "readtopia-test",
     "public": true
